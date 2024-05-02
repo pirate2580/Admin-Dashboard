@@ -1,0 +1,212 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-size: 1.4vw;
+}
+
+:root {
+  --main-color: rgb(22, 136, 244);
+  --text-main-color: white;
+  --text-alt-color: black;
+  --grey-background: rgb(233, 233, 233);
+}
+
+body{
+  display: grid;
+  grid-template-rows: repeat(1, 15%) repeat(1, 85%);
+  grid-template-columns: repeat(1, 15%) repeat(1, 85%);
+  resize: both;
+  width: 100%;
+}
+
+p {
+  color: var(--text-main-color);
+  font-weight: bolder;
+}
+.dashboard p{
+  font-size: 2.3vw;
+}
+
+img{
+  height: 1.4vw;
+  width: 1.4vw;
+}
+
+#sidebar-container{
+  /* margin: 1rem; */
+  padding: 1rem;
+  /* margin-right: 3rem; */
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  background: var(--main-color);
+  height: 100vh;  
+  display: grid;
+  grid-template-rows: repeat(1, 1.5fr) repeat(5, 1fr) repeat(1, 2fr) repeat(3, 1fr) repeat(1, 1fr);
+}
+#sidebar-container *{
+  display:flex;
+  flex-direction: row;
+  margin: 0.5rem;
+}
+#header-container img{
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 100%;
+}
+
+#header-container input[type="text"] {
+  background-color: var(--grey-background);
+  height: 1.2rem; /* Adjust the height according to your preference */
+  width: 30rem;
+}
+
+#header-container{
+  display: grid;
+  grid-template-rows: repeat(1, 1fr) repeat(1 3fr) repeat(1, 1fr);
+  grid-template-columns: repeat(1, 1fr) repeat(1, 5fr) repeat(3, 1fr);
+  /* margin: 1rem; */
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  justify-items: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+#header-container p:not(:first-child) {
+  justify-self: left; /* Center justify other images */
+}
+
+#header-container p{
+  color: var(--text-alt-color);
+}
+
+#main-content-container{
+  padding-top: 2rem;
+  padding-left: 1rem;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: var(--grey-background);
+  
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 60%) repeat(1, 40%);
+}
+
+#main-content-container p{
+  color: var(--text-alt-color);
+}
+
+.project-container{
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
+
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+
+  max-height: 48vw;
+}
+
+.project{
+  background-color: white;
+  margin: 1rem;
+  margin-bottom: 0rem;
+  padding: 0.5rem;
+  border-radius: 5%;
+
+  word-wrap: break-word; /* Allow long words to break and wrap onto the next line */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  overflow: hidden; /* Prevent overflow */
+  border-color: black;
+  border: 0.01rem solid black; /* Set border thickness to 2px and color to black */
+}
+
+
+.announcement-container{
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  max-height: 40vh; /* Set a maximum height for the announcements container */
+
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+  grid-template-rows: repeat(1, 10%) repeat(3, calc(90% / 3)) ;
+  border: 0.1rem solid #000000; /* Add a border to each announcement */
+  border-radius: 2%;
+}
+
+.announcement-container::before {
+  content: "Announcements"; /* Title text */
+  font-weight: bold; /* Make the title bold */
+  text-align: center; /* Center the title */
+  padding: 5px; /* Add some padding around the title */
+  background-color: #f0f0f0; /* Background color for the title */
+}
+
+.announcement{
+  background-color: var(--text-main-color);
+  word-wrap: break-word; /* Allow long words to break and wrap onto the next line */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  overflow: hidden; /* Prevent overflow */
+  border: 0.01rem solid black; /* Set border thickness to 2px and color to black */
+  padding: 0.5rem;
+  /* padding: 10px; Add padding to create space between text and border */
+}
+
+
+.trending-container::before {
+  content: "Trending"; /* Title text */
+  font-weight: bold; /* Make the title bold */
+  text-align: center; /* Center the title */
+  padding: 5px; /* Add some padding around the title */
+  background-color: #f0f0f0; /* Background color for the title */
+}
+
+.trending-container{
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  background-color: white;
+  margin: 1.5rem;
+
+  border-radius: 2%;
+  padding: 0.1rem;
+
+  display: grid;
+  grid-template-rows: repeat(1, 10%) repeat(4, calc(90%/4));
+  border: 0.01rem solid black;
+
+}
+
+.trending-container img{
+  height: 10 vw;
+  width: auto;
+  border-radius: 100%;
+}
+
+.trending{
+  border: 0.01rem solid black;
+  word-wrap: break-word; /* Allow long words to break and wrap onto the next line */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  overflow: hidden; /* Prevent overflow */
+}
+
+button{
+  background-color: var(--main-color);
+  color: var(--text-main-color);
+  border-radius: 1rem;
+  margin: 0.2rem;
+  width: 5rem;
+  height: 2rem;
+
+}
